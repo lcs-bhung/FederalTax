@@ -30,14 +30,14 @@ class ViewController: UIViewController {
         let nameAsString = nameOfPerson.text!
         let annualIncomeAsString = grossAnnualIncome.text!
     //Convert string to an integer
-        let annualIncome = Int(annualIncomeAsString)
+        let annualIncome = Int(annualIncomeAsString)!
         var tax = 0
     //Use guards
 
-            guard nameOfPerson.text = String else {
-            nameError.text = "Please enter your name"
+        guard annualIncome >= 0 else {
+            incomeError.text = "Please enter your gross income in dollars"
+            return
             }
-        guard
         
     
     //Find the tax
@@ -53,7 +53,13 @@ class ViewController: UIViewController {
         default:
             var tax = 33
     }
-    let
+    
+    let taxPercent = Double(tax/100)
+    let taxOwing = Double(annualIncome)*taxPercent
+    taxRate.text = "Effective tax rate is: (tax)%"
+        taxOwingNumber.text = "(nameAsString) your federal tax owing is $(taxOwing)"
+        
+        
         }
     }
     

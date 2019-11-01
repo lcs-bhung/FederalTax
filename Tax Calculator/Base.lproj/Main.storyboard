@@ -95,13 +95,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="Calculate" destination="YFh-bR-DCS" id="aHI-rf-vFd"/>
-                        <outlet property="anyError" destination="qcq-ao-YDk" id="Crz-AG-u6W"/>
-                        <outlet property="calculate" destination="YFh-bR-DCS" id="gce-Dq-xCa"/>
                         <outlet property="grossAnnualIncome" destination="bfc-lU-aHw" id="dvf-vb-iSb"/>
                         <outlet property="incomeError" destination="nX6-Bv-gEe" id="U91-5Z-2Gg"/>
-                        <outlet property="name" destination="XzG-O6-qzu" id="miB-Sa-jtc"/>
                         <outlet property="nameError" destination="qcq-ao-YDk" id="0Da-xl-Qsg"/>
+                        <outlet property="nameOfPerson" destination="XzG-O6-qzu" id="YW6-aj-R3L"/>
                         <outlet property="taxOwingNumber" destination="TWA-Yv-zqu" id="gis-lZ-DQn"/>
                         <outlet property="taxRate" destination="6M3-VS-HqA" id="p3f-xF-ecd"/>
                     </connections>
