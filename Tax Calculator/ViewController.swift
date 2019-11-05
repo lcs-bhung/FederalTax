@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         }
         
         
-    
+     
     var theTax = Double()
     var taxOwing = Double()
     //Find the tax
