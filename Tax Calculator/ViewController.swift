@@ -31,15 +31,17 @@ class ViewController: UIViewController {
         let annualIncomeAsString = grossAnnualIncome.text!
   
         
-        //Convert string to an integer
-        let annualIncome = Double(annualIncomeAsString)!
+    
+    
         
     //Use Guard statement
 
-        guard let annualIncome = Double(annualIncomeAsString) else{
+        guard Double(annualIncomeAsString) != nil else{
             taxRate.text = "please enter a numeric gross income"
             return
         }
+        //Convert string to an integer
+        let annualIncome = Double(annualIncomeAsString)!
        
         if nameAsString == ""
         {
