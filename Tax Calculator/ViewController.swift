@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         let annualIncomeAsString = grossAnnualIncome.text!
     //Convert string to an integer
         let annualIncome = Int(annualIncomeAsString)!
-        var tax = 0
     //Use guards
 
         guard annualIncome >= 0 else {
@@ -43,24 +42,24 @@ class ViewController: UIViewController {
     //Find the tax
         switch annualIncome {
         case 0...47630:
-            var tax = 15
+            let theTax = 15
         case 47630...95259:
-            var tax = Double(20.5)
+            let theTax = 20.5
         case 95295...147667:
-            var tax = 26
+            let theTax = 26
         case 17667...210371:
-            var tax = 29
+            let theTax = 29
         default:
-            var tax = 33
-    }
-    
-    let taxPercent = Double(tax/100)
-    let taxOwing = Double(annualIncome)*taxPercent
-    taxRate.text = "Effective tax rate is: (tax)%"
-        taxOwingNumber.text = "(nameAsString) your federal tax owing is $(taxOwing)"
-        
-        
+            let theTax = 33
         }
+    
+    let taxPercent = Double(theTax/100)
+    let taxOwing = Double(annualIncome)*taxPercent
+    taxRate.text = "Effective tax rate is: \(theTax)%"
+        taxOwingNumber.text = "\(nameAsString) your federal tax owing is $\(taxOwing)"
+    
+        }
+        
     }
     
 
