@@ -32,13 +32,14 @@ class ViewController: UIViewController {
   
         //Convert string to an integer
         let annualIncome = Int(annualIncomeAsString)!
-    //Use guards
+    //Use If statement
 
-        guard annualIncome >= 0 else {
+       if annualIncomeAsString == ""
+       {
             incomeError.text = "Please enter your gross income in dollars"
-            return
             }
-    //Or if statements
+       
+       
         if nameAsString == ""
         {
             nameError.text = "Please enter your name"
@@ -67,7 +68,7 @@ class ViewController: UIViewController {
         taxOwingNumber.text = "\(nameAsString), your federal tax owing is $\(taxOwing)"
     
         }
-        
+    
     }
     
 
