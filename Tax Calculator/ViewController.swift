@@ -38,20 +38,22 @@ class ViewController: UIViewController {
             return
             }
         
-    
+    var theTax = Int()
     //Find the tax
         switch annualIncome {
         case 0...47630:
-            let theTax = 15
+            theTax = 15
         case 47630...95259:
-            let theTax = 20.5
+            theTax = Int(Double(20.5))
         case 95295...147667:
-            let theTax = 26
+            theTax = 26
         case 17667...210371:
-            let theTax = 29
+            theTax = 29
         default:
-            let theTax = 33
+            theTax = 33
         }
+        
+    
     
     let taxPercent = Double(theTax/100)
     let taxOwing = Double(annualIncome)*taxPercent
