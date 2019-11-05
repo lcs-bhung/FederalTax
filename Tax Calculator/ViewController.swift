@@ -30,19 +30,21 @@ class ViewController: UIViewController {
         let nameAsString = nameOfPerson.text!
         let annualIncomeAsString = grossAnnualIncome.text!
   
+        if annualIncomeAsString == ""
+        {
+            incomeError.text = "Please enter your gross income in dollars"
+            return
+        }
         //Convert string to an integer
         let annualIncome = Int(annualIncomeAsString)!
     //Use If statement
 
-       if annualIncomeAsString == ""
-       {
-            incomeError.text = "Please enter your gross income in dollars"
-            }
-       
+      
        
         if nameAsString == ""
         {
             nameError.text = "Please enter your name"
+            return
         }
         
         
