@@ -30,42 +30,48 @@ class ViewController: UIViewController {
         let nameAsString = nameOfPerson.text!
         let annualIncomeAsString = grossAnnualIncome.text!
   
-        if annualIncomeAsString == ""
-        {
-            incomeError.text = "Please enter your gross income in dollars"
+        
+        //Convert string to an integer
+        let annualIncome = Double(annualIncomeAsString)!
+        
+    //Use Guard statement
+
+        guard let annualIncome = Double(annualIncomeAsString) else{
+            taxRate.text = "please enter a numeric gross income"
             return
         }
-        //Convert string to an integer
-        let annualIncome = Int(annualIncomeAsString)!
-    //Use If statement
-
-      
        
         if nameAsString == ""
         {
-            nameError.text = "Please enter your name"
+            taxOwingNumber.text = "Please enter your name"
             return
         }
         
         
-    var theTax = Int()
+    
+    var theTax = Double()
+    var taxOwing = Double()
     //Find the tax
         switch annualIncome {
         case 0...47630:
-            theTax = 15
-        case 47630...95259:
-            theTax = Int(Double(20.5))
-        case 95295...147667:
-            theTax = 26
-        case 17667...210371:
-            theTax = 29
+            theTax = Double(15)
+            taxOwing = (annualIncome)*(theTax)/100
+        case 47631...95259:
+            theTax = Double(20.5)
+            taxOwing = (annualIncome-47630)*0.205+7133.5
+        case 95260...147667:
+            theTax = Double(26)
+            taxOwing = (annualIncome-95295)*0.26+7133.5+9763.9
+        case 147668...210371:
+            theTax = Double(29)
+            taxOwing = (annualIncome-147667)*0.29+7133.5+9763.9+13625.8
         default:
-            theTax = 33
+            theTax = Double(33)
+            taxOwing = (annualIncome-210372)*0.33+7133.5+9763.9+13625.82+18183.9
         }
         
-    
-    
-    let taxOwing = Double(annualIncome)*Double(theTax)/100
+        
+
     taxRate.text = "Effective tax rate is: \(theTax)%"
         taxOwingNumber.text = "\(nameAsString), your federal tax owing is $\(taxOwing)"
     
